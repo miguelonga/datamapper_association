@@ -1,0 +1,10 @@
+<img src="<%= @photo.url %>" alt="">
+
+<form action="/photo/<%= @photo.id %>/create/comment" method="post">
+  <input type="text" name="description">
+  <input type="submit">
+</form>
+<% @photo.comments.each do |comment| %>
+	<div class="p"><%= comment.description %></div>
+	<div class="p"><%= comment.photo_id %></div>
+<% end %>
